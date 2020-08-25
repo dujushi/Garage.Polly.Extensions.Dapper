@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Garage.Polly.Extensions.Dapper</name>
+    </assembly>
+    <members>
+        <member name="T:Garage.Polly.Extensions.Dapper.DapperExtensions">
+            <summary>
+            Includes a collection of extension methods for <see cref="N:Garage.Polly.Extensions.Dapper"/>.
+            </summary>
+        </member>
+        <member name="M:Garage.Polly.Extensions.Dapper.DapperExtensions.ExecuteAsyncWithRetry(System.Data.IDbConnection,System.String,System.Object,System.Data.IDbTransaction,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Wraps ExecuteAsync with retry policy.
+            </summary>
+            <param name="cnn">The db connection</param>
+            <param name="sql">The sql query</param>
+            <param name="param">The sql query parameters</param>
+            <param name="transaction">The db transaction</param>
+            <param name="commandTimeout">The command timeout value</param>
+            <param name="commandType">The command type</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the result of the asynchronous operation.</returns>
+        </member>
+        <member name="M:Garage.Polly.Extensions.Dapper.DapperExtensions.QueryAsyncWithRetry``1(System.Data.IDbConnection,System.String,System.Object,System.Data.IDbTransaction,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Wraps QueryAsync with retry policy.
+            </summary>
+            <typeparam name="T">The generic type of returning object</typeparam>
+            <param name="cnn">The db connection</param>
+            <param name="sql">The sql query</param>
+            <param name="param">The sql query parameters</param>
+            <param name="transaction">The db transaction</param>
+            <param name="commandTimeout">The command timeout value</param>
+            <param name="commandType">The command type</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> representing the result of the asynchronous operation.</returns>
+        </member>
+        <member name="M:Garage.Polly.Extensions.Dapper.DapperExtensions.QueryFirstOrDefaultAsyncWithRetry``1(System.Data.IDbConnection,System.String,System.Object,System.Data.IDbTransaction,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Wraps QueryFirstOrDefaultAsync with retry policy.
+            </summary>
+            <typeparam name="T">The generic type of returning object</typeparam>
+            <param name="cnn">The db connection</param>
+            <param name="sql">The sql query</param>
+            <param name="param">The sql query parameters</param>
+            <param name="transaction">The db transaction</param>
+            <param name="commandTimeout">The command timeout value</param>
+            <param name="commandType">The command type</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> representing the result of the asynchronous operation.</returns>
+        </member>
+        <member name="M:Garage.Polly.Extensions.Dapper.DapperExtensions.QueryMultipleAsyncWithRetry(System.Data.IDbConnection,System.String,System.Object,System.Data.IDbTransaction,System.Nullable{System.Int32},System.Nullable{System.Data.CommandType})">
+            <summary>
+            Wraps QueryMultipleAsync with retry policy.
+            </summary>
+            <param name="cnn">The db connection</param>
+            <param name="sql">The sql query</param>
+            <param name="param">The sql query parameters</param>
+            <param name="transaction">The db transaction</param>
+            <param name="commandTimeout">The command timeout value</param>
+            <param name="commandType">The command type</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task`1"/> representing the result of the asynchronous operation.</returns>
+        </member>
+        <member name="T:Garage.Polly.Extensions.Dapper.SqlServerTransientExceptionDetector">
+            <summary>
+            Detects the exceptions caused by SQL Server transient failures.
+            </summary>
+            <remarks>
+            This file comes from:
+            https://raw.githubusercontent.com/aspnet/EntityFrameworkCore/master/src/EFCore.SqlServer/Storage/Internal/SqlServerTransientExceptionDetector.cs
+            and
+            https://github.com/Azure/elastic-db-tools/blob/master/Src/ElasticScale.Client/ElasticScale.Common/TransientFaultHandling/Implementation/SqlDatabaseTransientErrorDetectionStrategy.cs
+            With the addition of
+            SQL Error 11001 (connection failed).
+            </remarks>
+        </member>
+        <member name="M:Garage.Polly.Extensions.Dapper.SqlServerTransientExceptionDetector.ShouldRetryOn(Microsoft.Data.SqlClient.SqlException)">
+            <summary>
+            Checks if retry with the <see cref="T:Microsoft.Data.SqlClient.SqlException"/>.
+            </summary>
+            <param name="ex">The <see cref="T:Microsoft.Data.SqlClient.SqlException"/>.</param>
+            <returns>Whether to retry.</returns>
+        </member>
+        <member name="M:Garage.Polly.Extensions.Dapper.SqlServerTransientExceptionDetector.ShouldRetryOn(System.ComponentModel.Win32Exception)">
+            <summary>
+            Checks if retry with the <see cref="T:System.ComponentModel.Win32Exception"/>.
+            </summary>
+            <param name="ex">The <see cref="T:System.ComponentModel.Win32Exception"/>.</param>
+            <returns>Whether to retry.</returns>
+        </member>
+    </members>
+</doc>

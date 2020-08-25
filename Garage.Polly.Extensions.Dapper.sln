@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Garage.Polly.Extensions.Dapper", "Garage.Polly.Extensions.Dapper\Garage.Polly.Extensions.Dapper.csproj", "{2BF20C5F-5952-43EA-9F9E-8DD192619B1B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D5ACB85C-9B2F-4A41-8CF7-FECBAB206FDA}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2BF20C5F-5952-43EA-9F9E-8DD192619B1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BF20C5F-5952-43EA-9F9E-8DD192619B1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BF20C5F-5952-43EA-9F9E-8DD192619B1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BF20C5F-5952-43EA-9F9E-8DD192619B1B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A359AA10-DA41-4C03-8665-95D369A3F846}
+	EndGlobalSection
+EndGlobal
