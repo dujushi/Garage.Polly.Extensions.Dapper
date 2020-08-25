@@ -1,0 +1,2 @@
+﻿# Garage.Polly.Extensions.Dapper
+This library adds retries to Dapper using Polly library. [SQL Server Retries with Dapper and Polly](https://hyr.mn/Dapper-and-Polly/) by Ben Hyrman has a good explanation of the library. 
