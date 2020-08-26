@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Garage.Polly.Extensions.Dapper.Sample.Database": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ConnectionString": "Server=localhost;Database=Sample;Trusted_Connection=True"
+      }
+    }
+  }
+}

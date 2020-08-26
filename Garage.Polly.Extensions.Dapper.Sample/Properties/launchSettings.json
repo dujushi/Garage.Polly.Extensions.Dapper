@@ -1,0 +1,32 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:52481",
+      "sslPort": 44312
+    }
+  },
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "Products",
+      "environmentVariables": {
+        "ConnectionString": "Server=localhost;Database=Sample;Trusted_Connection=True",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "Garage.Polly.Extensions.Dapper.Sample": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "Products",
+      "environmentVariables": {
+        "ConnectionString": "Server=localhost;Database=Sample;Trusted_Connection=True",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:5001;http://localhost:5000"
+    }
+  }
+}
