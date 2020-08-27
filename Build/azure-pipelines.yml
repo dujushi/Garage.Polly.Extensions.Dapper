@@ -1,0 +1,35 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  buildConfiguration: 'Release'
+
+steps:
+- task: gitversion/setup@0
+  displayName: Install GitVersion
+  inputs:
+    versionSpec: '5.3.7'
+
+- task: gitversion/execute@0
+  displayName: Use GitVersion
+  
+- script: dotnet build --configuration $(buildConfiguration)
+  displayName: Build
+
+- script: dotnet test --configuration $(buildConfiguration) --collect:"XPlat Code Coverage"
+  displayName: Test
+
+- task: PublishCodeCoverageResults@1
+  displayName: Publish code coverage report
+  inputs:
+    codeCoverageTool: 'Cobertura'
+    summaryFileLocation: '$(Build.SourcesDirectory)/**/coverage.cobertura.xml'
+    
+- script: dotnet pack --no-build --configuration $(buildConfiguration) -p:PackageVersion=$(Build.BuildNumber)
+  displayName: Pack
+    
+- script: dotnet nuget push $(Build.SourcesDirectory)/**/*.nupkg -k $(NuGetApiKey) -s https://api.nuget.org/v3/index.json
+  displayName: Push to nuget.org
