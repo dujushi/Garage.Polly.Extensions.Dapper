@@ -338,3 +338,10 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+
+**/Garage.Polly.Extensions.Dapper.xml
+*.backup
+Terraform/.terraform/
+Terraform/terraform.tfstate
+Terraform/Properties.xml
+Terraform/Message.xml

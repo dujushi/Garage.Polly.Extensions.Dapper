@@ -50,7 +50,7 @@ values
 select cast(scope_identity() as int)
 ";
             await using var connection = new SqlConnection(_connectionStringProvider.Get());
-            var id = await connection.ExecuteScalarAsync<int>(query, new { entity.Name });
+            var id = await connection.ExecuteScalarAsyncWithRetry<int>(query, new { entity.Name });
             return id;
         }
     }

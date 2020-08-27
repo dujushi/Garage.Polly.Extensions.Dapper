@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D5ACB85C-9B2F-4A41-8CF7-FECBAB206FDA}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Garage.Polly.Extensions.Dapper.Sample", "Garage.Polly.Extensions.Dapper.Sample\Garage.Polly.Extensions.Dapper.Sample.csproj", "{34CD0553-F05D-44D8-A862-A2AC16878F42}"

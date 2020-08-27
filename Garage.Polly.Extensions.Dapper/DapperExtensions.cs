@@ -54,6 +54,25 @@ namespace Garage.Polly.Extensions.Dapper
             CommandType? commandType = null) => RetryPolicy.ExecuteAsync(() => cnn.ExecuteAsync(sql, param, transaction, commandTimeout, commandType));
 
         /// <summary>
+        /// Wraps ExecuteScalarAsync with retry policy.
+        /// </summary>
+        /// <typeparam name="T">The generic type of returning object</typeparam>
+        /// <param name="cnn">The db connection</param>
+        /// <param name="sql">The sql query</param>
+        /// <param name="param">The sql query parameters</param>
+        /// <param name="transaction">The db transaction</param>
+        /// <param name="commandTimeout">The command timeout value</param>
+        /// <param name="commandType">The command type</param>
+        /// <returns>A <see cref="Task"/> representing the result of the asynchronous operation.</returns>
+        public static Task<T> ExecuteScalarAsyncWithRetry<T>(
+            this IDbConnection cnn,
+            string sql,
+            object param = null,
+            IDbTransaction transaction = null,
+            int? commandTimeout = null,
+            CommandType? commandType = null) => RetryPolicy.ExecuteAsync(() => cnn.ExecuteScalarAsync<T>(sql, param, transaction, commandTimeout, commandType));
+
+        /// <summary>
         /// Wraps QueryAsync with retry policy.
         /// </summary>
         /// <typeparam name="T">The generic type of returning object</typeparam>
