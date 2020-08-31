@@ -25,4 +25,4 @@ When you finish testing, run `terraform destroy` to destroy the resources.
 This sample project uses FluentMigrator to set up database schema. Update `ConnectionString` environment variable for `Garage.Polly.Extensions.Dapper.Sample.Database` with the output value from Terraform. Then run the project to apply the database schema.
 
 ## Run Api endpoint
-Run the api project to test the library.
+Update `ConnectionString` environment variable. Then you can run the api project to test the library.
